@@ -58,6 +58,7 @@
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
      <None Include="Assets\VRTK\Scripts\Shaders\UIOverlay.shader" />
+     <None Include="Assets\ColorfulButtons\Credits.txt" />
      <None Include="Assets\VRTK\Scripts\Shaders\VRTK_OutlineBasic.shader" />
      <None Include="Assets\VRTK\Scripts\Shaders\AdaptiveQualityDebugVisualization.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
