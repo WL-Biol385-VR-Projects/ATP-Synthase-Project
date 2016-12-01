@@ -80,6 +80,7 @@
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_UpdatePoses.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
+     <Compile Include="Assets\TriggerChangeScene.cs" />
      <Compile Include="Assets\VRTK\Examples\Resources\Scripts\Add_HeadsetCollisionFade.cs" />
      <Compile Include="Assets\VRTK\Examples\Resources\Scripts\Archery\Arrow.cs" />
      <Compile Include="Assets\VRTK\Examples\Resources\Scripts\Archery\ArrowNotch.cs" />
