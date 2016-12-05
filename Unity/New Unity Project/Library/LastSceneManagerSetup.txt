@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/contentHallway 20161117.unity
+- path: Assets/atp synthase interaction.unity
   isLoaded: 1
   isActive: 1

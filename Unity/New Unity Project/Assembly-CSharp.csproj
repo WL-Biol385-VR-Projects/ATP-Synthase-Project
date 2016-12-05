@@ -48,6 +48,7 @@
      <Compile Include="Assets\InitialToolTipOff.cs" />
      <Compile Include="Assets\MenuToolTips.cs" />
      <Compile Include="Assets\NassacGamesShieldsPack\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\ReturnToStart2.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
