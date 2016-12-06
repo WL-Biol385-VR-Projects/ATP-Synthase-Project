@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ReturnToStart2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\JustRotate.js">
     <Files>
       <File FileName="Assets\MenuToolTips.cs" Line="1" Column="1" />
       <File FileName="Assets\ReturnToStart2.cs" Line="1" Column="1" />
+      <File FileName="Assets\JustRotate.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
