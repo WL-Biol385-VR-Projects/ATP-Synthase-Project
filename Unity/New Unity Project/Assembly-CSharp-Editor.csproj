@@ -70,7 +70,7 @@
      <None Include="Assets\VRTK\Scripts\Shaders\Unlit_TransparentColor.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>H:/ATP-Synthase-Project/Unity/New Unity Project/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/bowmanj17/Desktop/ATP-Synthase-Project/Unity/New Unity Project/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
