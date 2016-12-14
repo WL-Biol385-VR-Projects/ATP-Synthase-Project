@@ -1,11 +1,14 @@
-# ATP-Synthase-Project
+
+# **ATP-Synthase-Project**
 Init on 20161110
 
-Works Cited
+Developed using Cinema 4D and Unity; optimized for Vive VR.
+
+## **Works Cited**
 
 Music source: https://www.freesound.org/people/ShadyDave/sounds/325611/
 
-Abrahams, J.P., Leslie, A.G., Lutter, R., and Walker J.E. (1994) Structure at 2.8 Å resolution of F 1 -ATPase from bovine heart mitochondria, Nature  370, 621-628.
+Abrahams, J.P., Leslie, A.G., Lutter, R., and Walker J.E. (1994) Structure at 2.8 Å resolution of F 1 -ATPase from bovine heart   mitochondria, Nature  370, 621-628.
 
 Boyer, P.D. (1975) A model for conformational coupling of membrane potential and proton translocation to ATP synthesis and to active transport. FEBS Lett. 58, 1–6
 
@@ -38,4 +41,28 @@ Racker, Efriam. (1963) "A mitochondrial factor conferring oligomycin sensitivity
 Walker, J.E., Fearnley, I.M., Gay, N.J., Gibson, B.W., Northrop, F.D., Powell, S.J., Runswick, M.J., Saraste, M. and Tybulewicz, V.L. (1985) Primary structure and subunit stoichiometry of F1-ATPase from bovine mitochondria. J. Mol. Biol. 184, 677–701
 
 Walker, J.E. and Dickson, V.K. (2006) The peripheral stalk of the mitochondrial ATP synthase. Biochim. Biophys. Acta 1757, 286–296
- 
+
+Assets implemented in the project can be found under the Assets folder.
+
+## Special thanks to:
+* Dr. Paul Low
+* Mr. Dave Phaff
+* Dr. Gregg Whitworth
+
+# Copyright and Licensing
+Copyright 2016 John Bowman, Matthew Bryson, Jennifer Lee, Katie Windle
+
+This file is part of ATP-Synthase-Project.
+
+ATP-Synthase-Project is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ATP-Synthase=Project is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
