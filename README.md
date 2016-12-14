@@ -1,4 +1,3 @@
-
 # **ATP-Synthase-Project**
 Init on 20161110
 
@@ -9,7 +8,6 @@ Developed using Cinema 4D and Unity; optimized for Vive VR.
 Music source: https://www.freesound.org/people/ShadyDave/sounds/325611/
 
 Abrahams, J.P., Leslie, A.G., Lutter, R., and Walker J.E. (1994) Structure at 2.8 Å resolution of F 1 -ATPase from bovine heart   mitochondria, Nature  370, 621-628.
-
 Boyer, P.D. (1975) A model for conformational coupling of membrane potential and proton translocation to ATP synthesis and to active transport. FEBS Lett. 58, 1–6
 
 --. (1993) The binding change mechanism for ATP synthase - Some probabilities and possibilities, Biochimica et Biophysica Acta  1140, 215-250.
@@ -19,8 +17,7 @@ Boyer, P.D. (1975) A model for conformational coupling of membrane potential and
 Carbajo, R.J., Kellas, F.A., Runswick, M.J., Montgomery, M.G., Walker,
 J.E. and Neuhaus, D. (2005) Structure of the F1-binding domain of the stator of bovine F1Fo-ATPase and how it binds an α-subunit. J. Mol. Biol. 351, 824–838
 
-Carbajo, R.J., Kellas, F.A., Yang, J.C., Runswick, M.J., Montgomery, M.G., Walker, J.E. and Neuhaus, D. (2007) How the N-terminal domain of
-the OSCP subunit of bovine F1 Fo -ATP synthase interacts with the N-terminal region of an α subunit. J. Mol. Biol. 368, 310–318 
+Carbajo, R.J., Kellas, F.A., Yang, J.C., Runswick, M.J., Montgomery, M.G., Walker, J.E. and Neuhaus, D. (2007) How the N-terminal domain ofthe OSCP subunit of bovine F1 Fo -ATP synthase interacts with the N-terminal region of an α subunit. J. Mol. Biol. 368, 310–318 
 
 Feniouk, B., and W. Junge (2005). Regulation of the F0F1-ATP synthase: The conformation of subunit ε might be determined by directionality of subunit γ rotation. Febs Letters. 579(23): 5114–5118. 
 
@@ -59,10 +56,10 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-ATP-Synthase=Project is distributed in the hope that it will be useful,
+ATP-Synthase-Project is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+along with ATP-Synthase-Project.  If not, see <http://www.gnu.org/licenses/>.
