@@ -13,10 +13,10 @@ Abrahams, J.P., Leslie, A.G., Lutter, R., and Walker J.E. (1994) Structure at 2.
 Boyer, P.D. (1975) A model for conformational coupling of membrane potential and proton translocation to ATP synthesis and to active 
     transport. FEBS Lett. 58, 1–6
 
-(1993) The binding change mechanism for ATP synthase - Some probabilities and possibilities, Biochimica et Biophysica Acta  1140, 215-
-    250.
+--. (1993) The binding change mechanism for ATP synthase - Some probabilities and possibilities, Biochimica et Biophysica Acta  1140, 
+    215-250.
 
-(1997) The ATP synthase - a splendid molecular machine, Annual Review in Biochemistry  66, 717-749.
+--. (1997) The ATP synthase - a splendid molecular machine, Annual Review in Biochemistry  66, 717-749.
 
 Carbajo, R.J., Kellas, F.A., Runswick, M.J., Montgomery, M.G., Walker, J.E. and Neuhaus, D. (2005) Structure of the F1-binding domain of 
     the stator of bovine F1Fo-ATPase and how it binds an α-subunit. J. Mol. Biol. 351, 824–838
@@ -50,7 +50,17 @@ Walker, J.E., Fearnley, I.M., Gay, N.J., Gibson, B.W., Northrop, F.D., Powell, S
 
 Walker, J.E. and Dickson, V.K. (2006) The peripheral stalk of the mitochondrial ATP synthase. Biochim. Biophys. Acta 1757, 286–296
 
-Assets implemented in the project can be found under the Assets folder.
+**Protein Structures were accessed using the Protein Data Bank (http://www.rcsb.org) and the ePMV plugin in Cinema 4D. The papers that published the crystal structures are cited below.**
+
+Del Rizzo, P.A., Bi, Y., Dunn, S.D., Shilton, B.H. (2002). The "second stalk" of Escherichia coli ATP synthase: structure of the isolated dimerization domain. Biochemistry 41: 6875-6884. 
+
+Gibbons, C., Montgomery, M.G., Leslie, A.G.W., Walker, J.E. (2000). The Structure of the Central Stalk in Bovine F(1)-ATPase at 2.4 A Resolution. Nat.Struct.Biol. 7: 1055.
+
+Rastogi, V.K., and Girvin, M.E. (1999). Structural changes linked to proton translocation by subunit c of the ATP synthase. Nature 402: 263-268. 
+
+Wilkens, S., Borchardt, D., Weber, J., Senior, A.E. (2005). Structural Characterization of the Interaction of the delta and alpha Subunits of the Escherichia coli F(1)F(0)-ATP Synthase by NMR Spectroscopy Biochemistry 44: 11786-11794. 
+
+**Assets implemented in the project can be found under the Assets folder.**
 
 ## Special thanks to:
 * Dr. Paul Low
