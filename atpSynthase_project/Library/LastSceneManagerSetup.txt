@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/20170124_mainRoom.unity
+- path: Assets/VRTK/Examples/009_Controller_BezierPointer.unity
   isLoaded: 1
   isActive: 1
