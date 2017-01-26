@@ -70,7 +70,7 @@ namespace VRTK
                 // Subscribe to new events
                 OnEnable();
 
-                Destroy(menuCollider);
+                Object.Destroy(menuCollider);
 
                 // Reset to initial state
                 Initialize();
@@ -170,7 +170,7 @@ namespace VRTK
         #region Event Listeners
         protected virtual void ObjectClicked(object sender, InteractableObjectEventArgs e)
         {
-            DoClickButton(sender);
+            base.DoClickButton(sender);
             isClicked = true;
 
             if (hideAfterExecution && !menu.executeOnUnclick)
@@ -181,7 +181,7 @@ namespace VRTK
 
         protected virtual void ObjectUnClicked(object sender, InteractableObjectEventArgs e)
         {
-            DoUnClickButton(sender);
+            base.DoUnClickButton(sender);
             isClicked = false;
 
             if ((hideAfterExecution || (collidingObjects.Count == 0 && menu.hideOnRelease)) && menu.executeOnUnclick)
@@ -192,7 +192,7 @@ namespace VRTK
 
         protected virtual void ObjectTouched(object sender, InteractableObjectEventArgs e)
         {
-            DoShowMenu(CalculateAngle(e.interactingObject), sender);
+            base.DoShowMenu(CalculateAngle(e.interactingObject), sender);
             collidingObjects.Add(e.interactingObject);
 
             interactingObjects.Add(e.interactingObject);
@@ -211,7 +211,7 @@ namespace VRTK
             collidingObjects.Remove(e.interactingObject);
             if (((!menu.executeOnUnclick || !isClicked) && menu.hideOnRelease) || (Object)sender == this)
             {
-                DoHideMenu(hideAfterExecution, sender);
+                base.DoHideMenu(hideAfterExecution, sender);
 
                 interactingObjects.Remove(e.interactingObject);
                 if (addMenuCollider && menuCollider != null)
@@ -222,7 +222,7 @@ namespace VRTK
             }
         }
 
-        protected override void AttemptHapticPulse(float strength)
+        protected override void AttemptHapticPulse(ushort strength)
         {
             if (interactingObjects.Count > 0)
             {
@@ -244,7 +244,7 @@ namespace VRTK
             Vector3 projection = transform.position + Vector3.ProjectOnPlane(toController, transform.forward);
 
             float angle = 0;
-            angle = AngleSigned(transform.right * -1, projection - transform.position, transform.forward);
+            angle = Utilities.AngleSigned(transform.right * -1, projection - transform.position, transform.forward);
 
             // Ensure angle is positive
             if (angle < 0)
@@ -253,13 +253,6 @@ namespace VRTK
             }
 
             return angle;
-        }
-
-        private float AngleSigned(Vector3 v1, Vector3 v2, Vector3 n)
-        {
-            return Mathf.Atan2(
-                Vector3.Dot(n, Vector3.Cross(v1, v2)),
-                Vector3.Dot(v1, v2)) * Mathf.Rad2Deg;
         }
 
         private void ImmediatelyHideMenu(InteractableObjectEventArgs e)
@@ -338,12 +331,8 @@ namespace VRTK
         {
             if (rotateTowards == null) // Backup
             {
-                var headsetCamera = VRTK_DeviceFinder.HeadsetCamera();
-                if (headsetCamera)
-                {
-                    rotateTowards = headsetCamera.gameObject;
-                }
-                else
+                rotateTowards = VRTK_DeviceFinder.HeadsetCamera().gameObject;
+                if (rotateTowards == null)
                 {
                     Debug.LogWarning("The IndependentRadialMenu could not automatically find an object to rotate towards.");
                 }
@@ -353,7 +342,7 @@ namespace VRTK
             {
                 if (interactingObjects.Count > 0) // There's not really an event for the controller moving, so just update the position every frame
                 {
-                    DoChangeAngle(CalculateAngle(interactingObjects[0]), this);
+                    base.DoChangeAngle(CalculateAngle(interactingObjects[0]), this);
                 }
 
                 if (rotateTowards != null)

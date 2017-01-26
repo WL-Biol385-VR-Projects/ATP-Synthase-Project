@@ -1,4 +1,4 @@
-﻿// Lever|Controls3D|100070
+﻿// Lever|Controls3D|0070
 namespace VRTK
 {
     using UnityEngine;
@@ -19,8 +19,6 @@ namespace VRTK
             x, y, z
         }
 
-        [Tooltip("An optional game object to which the lever will be connected. If the game object moves the lever will follow along.")]
-        public GameObject connectedTo;
         [Tooltip("The axis on which the lever should rotate. All other axis will be frozen.")]
         public LeverDirection direction = LeverDirection.y;
         [Tooltip("The minimum angle of the lever counted from its initial position.")]
@@ -40,7 +38,7 @@ namespace VRTK
         {
             if (GetComponentInChildren<Collider>() == null)
             {
-                VRTK_SharedMethods.CreateColliders(gameObject);
+                Utilities.CreateColliders(gameObject);
             }
 
             rb = GetComponent<Rigidbody>();
@@ -59,10 +57,9 @@ namespace VRTK
                 io = gameObject.AddComponent<VRTK_InteractableObject>();
             }
             io.isGrabbable = true;
-            io.grabAttachMechanicScript = gameObject.AddComponent<GrabAttachMechanics.VRTK_RotatorTrackGrabAttach>();
-            io.grabAttachMechanicScript.precisionGrab = true;
-            io.secondaryGrabActionScript = gameObject.AddComponent<SecondaryControllerGrabActions.VRTK_SwapControllerGrabAction>();
+            io.precisionSnap = true;
             io.stayGrabbedOnTeleport = false;
+            io.grabAttachMechanic = VRTK_InteractableObject.GrabAttachType.Rotator_Track;
 
             hj = GetComponent<HingeJoint>();
             if (hj == null)
@@ -70,23 +67,13 @@ namespace VRTK
                 hj = gameObject.AddComponent<HingeJoint>();
                 hjCreated = true;
             }
-
-            if (connectedTo)
-            {
-                Rigidbody rb2 = connectedTo.GetComponent<Rigidbody>();
-                if (rb2 == null)
-                {
-                    rb2 = connectedTo.AddComponent<Rigidbody>();
-                }
-                rb2.useGravity = false;
-            }
         }
 
         protected override bool DetectSetup()
         {
             if (hjCreated)
             {
-                Bounds bounds = VRTK_SharedMethods.GetBounds(transform, transform);
+                Bounds bounds = Utilities.GetBounds(transform, transform);
                 switch (direction)
                 {
                     case LeverDirection.x:
@@ -111,11 +98,6 @@ namespace VRTK
                 limits.min = minAngle;
                 limits.max = maxAngle;
                 hj.limits = limits;
-
-                if (connectedTo)
-                {
-                    hj.connectedBody = connectedTo.GetComponent<Rigidbody>();
-                }
             }
 
             return true;

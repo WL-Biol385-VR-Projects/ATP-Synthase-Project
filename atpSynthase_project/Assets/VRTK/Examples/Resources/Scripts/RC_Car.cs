@@ -27,7 +27,7 @@
             triggerAxis = data;
         }
 
-        public void ResetCar()
+        public void Reset()
         {
             transform.position = defaultPosition;
             transform.rotation = defaultRotation;

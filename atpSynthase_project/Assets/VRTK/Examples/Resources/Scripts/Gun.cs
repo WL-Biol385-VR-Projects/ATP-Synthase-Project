@@ -14,8 +14,9 @@
             FireBullet();
         }
 
-        protected void Start()
+        protected override void Start()
         {
+            base.Start();
             bullet = transform.Find("Bullet").gameObject;
             bullet.SetActive(false);
         }

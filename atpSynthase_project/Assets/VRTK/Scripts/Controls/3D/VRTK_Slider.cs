@@ -1,4 +1,4 @@
-﻿// Slider|Controls3D|100090
+﻿// Slider|Controls3D|0080
 namespace VRTK
 {
     using UnityEngine;
@@ -144,16 +144,15 @@ namespace VRTK
                 io = gameObject.AddComponent<VRTK_InteractableObject>();
             }
             io.isGrabbable = true;
-            io.grabAttachMechanicScript = gameObject.AddComponent<GrabAttachMechanics.VRTK_TrackObjectGrabAttach>();
-            io.grabAttachMechanicScript.precisionGrab = true;
-            io.secondaryGrabActionScript = gameObject.AddComponent<SecondaryControllerGrabActions.VRTK_SwapControllerGrabAction>();
+            io.precisionSnap = true;
             io.stayGrabbedOnTeleport = false;
+            io.grabAttachMechanic = VRTK_InteractableObject.GrabAttachType.Track_Object;
         }
 
         private Direction DetectDirection()
         {
             Direction direction = Direction.autodetect;
-            Bounds bounds = VRTK_SharedMethods.GetBounds(transform);
+            Bounds bounds = Utilities.GetBounds(transform);
 
             // shoot rays from the center of the slider, this means the center should be inside the frame to work properly
             RaycastHit hitForward;
@@ -238,7 +237,7 @@ namespace VRTK
 
         private bool DoDetectMinMax(Direction direction)
         {
-            Bounds bounds = VRTK_SharedMethods.GetBounds(transform);
+            Bounds bounds = Utilities.GetBounds(transform);
             Vector3 v = Vector3.zero;
             float extents = 0;
 
@@ -322,7 +321,7 @@ namespace VRTK
 
         private float CalculateValue()
         {
-            Vector3 center = (direction == Direction.autodetect) ? VRTK_SharedMethods.GetBounds(transform).center : transform.position;
+            Vector3 center = (direction == Direction.autodetect) ? Utilities.GetBounds(transform).center : transform.position;
             float dist1 = Vector3.Distance(finalMinPoint, center);
             float dist2 = Vector3.Distance(center, finalMaxPoint);
 

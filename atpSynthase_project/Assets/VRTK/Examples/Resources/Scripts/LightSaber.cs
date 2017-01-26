@@ -29,8 +29,9 @@
             beamExtendSpeed = -5f;
         }
 
-        protected void Start()
+        protected override void Start()
         {
+            base.Start();
             blade = transform.Find("Blade").gameObject;
             currentBeamSize = beamLimits.x;
             SetBeamSize();
@@ -38,7 +39,6 @@
 
         protected override void Update()
         {
-            base.Update();
             currentBeamSize = Mathf.Clamp(blade.transform.localScale.y + (beamExtendSpeed * Time.deltaTime), beamLimits.x, beamLimits.y);
             SetBeamSize();
             PulseBeam();

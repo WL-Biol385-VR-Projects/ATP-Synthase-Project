@@ -24,8 +24,9 @@
             open = !open;
         }
 
-        protected void Start()
+        protected override void Start()
         {
+            base.Start();
             defaultRotation = transform.eulerAngles;
             SetRotation();
             sideFlip = (flipped ? 1 : -1);
@@ -33,7 +34,6 @@
 
         protected override void Update()
         {
-            base.Update();
             if (open)
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(openRotation), Time.deltaTime * smooth);

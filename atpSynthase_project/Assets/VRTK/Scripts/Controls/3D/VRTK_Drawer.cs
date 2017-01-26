@@ -1,4 +1,4 @@
-﻿// Drawer|Controls3D|100050
+﻿// Drawer|Controls3D|0050
 namespace VRTK
 {
     using UnityEngine;
@@ -18,8 +18,6 @@ namespace VRTK
     /// </example>
     public class VRTK_Drawer : VRTK_Control
     {
-        [Tooltip("An optional game object to which the drawer will be connected. If the game object moves the drawer will follow along.")]
-        public GameObject connectedTo;
         [Tooltip("The axis on which the drawer should open. All other axis will be frozen.")]
         public Direction direction = Direction.autodetect;
         [Tooltip("The game object for the body.")]
@@ -55,7 +53,7 @@ namespace VRTK
             }
 
             // show opening direction
-            Bounds handleBounds = VRTK_SharedMethods.GetBounds(getHandle().transform, getHandle().transform);
+            Bounds handleBounds = Utilities.GetBounds(getHandle().transform, getHandle().transform);
             float length = handleBounds.extents.y * ((handle) ? 5f : 1f);
             Vector3 point = handleBounds.center;
             switch (finalDirection)
@@ -94,8 +92,8 @@ namespace VRTK
             }
 
             // determin sub-direction depending on handle
-            Bounds handleBounds = VRTK_SharedMethods.GetBounds(getHandle().transform, transform);
-            Bounds bodyBounds = VRTK_SharedMethods.GetBounds(getBody().transform, transform);
+            Bounds handleBounds = Utilities.GetBounds(getHandle().transform, transform);
+            Bounds bodyBounds = Utilities.GetBounds(getBody().transform, transform);
             switch (finalDirection)
             {
                 case Direction.x:
@@ -155,15 +153,10 @@ namespace VRTK
                 SoftJointLimit limit = cj.linearLimit;
                 limit.limit = pullDistance;
                 cj.linearLimit = limit;
-
-                if (connectedTo)
-                {
-                    cj.connectedBody = connectedTo.GetComponent<Rigidbody>();
-                }
             }
             if (cfCreated)
             {
-                cf.relativeForce = getThirdDirection(cj.axis, cj.secondaryAxis) * subDirection * -10f;
+                cf.force = getThirdDirection(cj.axis, cj.secondaryAxis) * subDirection * -10f;
             }
 
             return true;
@@ -195,23 +188,10 @@ namespace VRTK
             {
                 io = gameObject.AddComponent<VRTK_InteractableObject>();
             }
-
             io.isGrabbable = true;
-            io.grabAttachMechanicScript = gameObject.AddComponent<GrabAttachMechanics.VRTK_SpringJointGrabAttach>();
-            io.grabAttachMechanicScript.precisionGrab = true;
-            io.secondaryGrabActionScript = gameObject.AddComponent<SecondaryControllerGrabActions.VRTK_SwapControllerGrabAction>();
+            io.precisionSnap = true;
             io.stayGrabbedOnTeleport = false;
-
-            if (connectedTo)
-            {
-                Rigidbody rb2 = connectedTo.GetComponent<Rigidbody>();
-                if (rb2 == null)
-                {
-                    rb2 = connectedTo.AddComponent<Rigidbody>();
-                    rb2.useGravity = false;
-                    rb2.isKinematic = true;
-                }
-            }
+            io.grabAttachMechanic = VRTK_InteractableObject.GrabAttachType.Spring_Joint;
 
             cj = GetComponent<ConfigurableJoint>();
             if (cj == null)
@@ -251,8 +231,8 @@ namespace VRTK
         {
             Direction direction = Direction.autodetect;
 
-            Bounds handleBounds = VRTK_SharedMethods.GetBounds(getHandle().transform, transform);
-            Bounds bodyBounds = VRTK_SharedMethods.GetBounds(getBody().transform, transform);
+            Bounds handleBounds = Utilities.GetBounds(getHandle().transform, transform);
+            Bounds bodyBounds = Utilities.GetBounds(getBody().transform, transform);
 
             float lengthX = Mathf.Abs(handleBounds.center.x - (bodyBounds.center.x + bodyBounds.extents.x));
             float lengthY = Mathf.Abs(handleBounds.center.y - (bodyBounds.center.y + bodyBounds.extents.y));
@@ -261,27 +241,27 @@ namespace VRTK
             float lengthNegY = Mathf.Abs(handleBounds.center.y - (bodyBounds.center.y - bodyBounds.extents.y));
             float lengthNegZ = Mathf.Abs(handleBounds.center.z - (bodyBounds.center.z - bodyBounds.extents.z));
 
-            if (VRTK_SharedMethods.IsLowest(lengthX, new float[] { lengthY, lengthZ, lengthNegX, lengthNegY, lengthNegZ }))
+            if (Utilities.IsLowest(lengthX, new float[] { lengthY, lengthZ, lengthNegX, lengthNegY, lengthNegZ }))
             {
                 direction = Direction.x;
             }
-            else if (VRTK_SharedMethods.IsLowest(lengthNegX, new float[] { lengthX, lengthY, lengthZ, lengthNegY, lengthNegZ }))
+            else if (Utilities.IsLowest(lengthNegX, new float[] { lengthX, lengthY, lengthZ, lengthNegY, lengthNegZ }))
             {
                 direction = Direction.x;
             }
-            else if (VRTK_SharedMethods.IsLowest(lengthY, new float[] { lengthX, lengthZ, lengthNegX, lengthNegY, lengthNegZ }))
+            else if (Utilities.IsLowest(lengthY, new float[] { lengthX, lengthZ, lengthNegX, lengthNegY, lengthNegZ }))
             {
                 direction = Direction.y;
             }
-            else if (VRTK_SharedMethods.IsLowest(lengthNegY, new float[] { lengthX, lengthY, lengthZ, lengthNegX, lengthNegZ }))
+            else if (Utilities.IsLowest(lengthNegY, new float[] { lengthX, lengthY, lengthZ, lengthNegX, lengthNegZ }))
             {
                 direction = Direction.y;
             }
-            else if (VRTK_SharedMethods.IsLowest(lengthZ, new float[] { lengthX, lengthY, lengthNegX, lengthNegY, lengthNegZ }))
+            else if (Utilities.IsLowest(lengthZ, new float[] { lengthX, lengthY, lengthNegX, lengthNegY, lengthNegZ }))
             {
                 direction = Direction.z;
             }
-            else if (VRTK_SharedMethods.IsLowest(lengthNegZ, new float[] { lengthX, lengthY, lengthZ, lengthNegY, lengthNegX }))
+            else if (Utilities.IsLowest(lengthNegZ, new float[] { lengthX, lengthY, lengthZ, lengthNegY, lengthNegX }))
             {
                 direction = Direction.z;
             }

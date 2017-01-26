@@ -10,7 +10,6 @@ namespace VRTK
 
         protected RadialMenu menu;
         private float currentAngle; //Keep track of angle for when we click
-        private bool touchpadTouched;
 
         private void Awake()
         {
@@ -86,7 +85,7 @@ namespace VRTK
             menu.HoverButton(currentAngle);
         }
 
-        protected virtual void AttemptHapticPulse(float strength)
+        protected virtual void AttemptHapticPulse(ushort strength)
         {
             var controllerActions = GetComponentInParent<VRTK_ControllerActions>();
             if (controllerActions)
@@ -109,23 +108,18 @@ namespace VRTK
 
         private void DoTouchpadTouched(object sender, ControllerInteractionEventArgs e)
         {
-            touchpadTouched = true;
             DoShowMenu(CalculateAngle(e));
         }
 
         private void DoTouchpadUntouched(object sender, ControllerInteractionEventArgs e)
         {
-            touchpadTouched = false;
             DoHideMenu(false);
         }
 
         //Touchpad finger moved position
         private void DoTouchpadAxisChanged(object sender, ControllerInteractionEventArgs e)
         {
-            if (touchpadTouched)
-            {
-                DoChangeAngle(CalculateAngle(e));
-            }
+            DoChangeAngle(CalculateAngle(e));
         }
 
         #endregion Private Controller Listeners
