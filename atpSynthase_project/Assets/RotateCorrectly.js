@@ -4,7 +4,7 @@
 
 //Put on Rotating object
 //Target = center of rotation
-//degress = speed
+//degrees = speed
 
 var degrees = 10;
 
