@@ -6,6 +6,7 @@ Developed using Cinema 4D and Unity; optimized for Vive VR.
 ## **Works Cited**
 
 Music source: https://www.freesound.org/people/ShadyDave/sounds/325611/
+Door Opening Sound: http://freesound.org/people/primeval_polypod/sounds/156508/
 
 Abrahams, J.P., Leslie, A.G., Lutter, R., and Walker J.E. (1994) Structure at 2.8 Å resolution of F 1 -ATPase from bovine heart   
     mitochondria, Nature  370, 621-628.
