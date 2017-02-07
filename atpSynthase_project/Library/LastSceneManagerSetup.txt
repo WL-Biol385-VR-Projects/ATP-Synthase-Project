@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/20170131_historyHallway.unity
+- path: D:/_Unity/BIOL385/BIOL385/Assets/BioDropZones.unity
   isLoaded: 1
   isActive: 1
