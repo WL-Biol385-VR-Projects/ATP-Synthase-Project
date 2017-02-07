@@ -3,9 +3,9 @@
 //place this onto the button
 
 var thingtomove : GameObject;
-var startPoint : Vector3;
-var endPoint : Vector3;
-var duration : float = 1;
+var startPoint  : Vector3;
+var endPoint    : Vector3;
+var duration    : float = 1;
 
 private var startTime : float;
 private var yourVar = false;
