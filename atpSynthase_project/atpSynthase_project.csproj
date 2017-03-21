@@ -77,7 +77,6 @@
   <ItemGroup>
     <Compile Include="Assets\InitialToolTipOff.cs" />
     <Compile Include="Assets\MenuToolTips.cs" />
-    <Compile Include="Assets\NassacGamesShieldsPack\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
     <Compile Include="Assets\PlaySoundOnce.cs" />
     <Compile Include="Assets\ReturnToStart2.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
@@ -233,8 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ColorfulButtons\Credits.txt" />
-    <None Include="Assets\NassacGamesShieldsPack\Description.txt" />
-    <None Include="Assets\NassacGamesShieldsPack\Standard Assets\shader\DifBumpSpecTransp.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
